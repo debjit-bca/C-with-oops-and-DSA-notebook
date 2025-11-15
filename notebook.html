@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Notebook - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <nav class="navbar">
+            <h1>Digital Notebook</h1>
+            <div class="nav-right">
+                <span id="userGreeting"></span>
+                <button onclick="logout()" class="btn-logout">Logout</button>
+            </div>
+        </nav>
+        
+        <div class="main-content">
+            <aside class="sidebar">
+                <button onclick="createNewNote()" class="btn btn-new">+ New Note</button>
+                <div id="notesList" class="notes-list"></div>
+            </aside>
+            
+            <main class="editor-section">
+                <div class="editor-header">
+                    <input type="text" id="noteTitle" placeholder="Note Title" class="note-title-input">
+                    <div class="editor-actions">
+                        <button onclick="aiSummarize()" class="btn-ai">AI Summary</button>
+                        <button onclick="aiImprove()" class="btn-ai">AI Improve</button>
+                        <button onclick="saveNote()" class="btn">Save</button>
+                        <button onclick="deleteNote()" class="btn-delete">Delete</button>
+                    </div>
+                </div>
+                <textarea id="noteContent" placeholder="Start typing your note..." class="note-editor"></textarea>
+                <div class="note-meta">
+                    <span id="wordCount">Words: 0</span>
+                    <span id="lastSaved"></span>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="js/notebook.js"></script>
+</body>
+</html>
